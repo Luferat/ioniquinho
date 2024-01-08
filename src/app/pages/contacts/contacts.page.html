@@ -8,5 +8,37 @@
 </ion-header>
 
 <ion-content [fullscreen]="true" class="ion-padding-start ion-padding-end">
-  <p>Preencha todos os campos do formulário abaixo para entrar em contato com a equipe do aplicativo.</p>
+
+  <div *ngIf="!form.sended">
+
+    <p>Preencha todos os campos abaixo para entrar em contato com a equipe do {{ env.appName }}.</p>
+
+    <p>
+      <ion-input label="Nome:" type="text" name="name" label-placement="floating" fill="outline" placeholder="Seu nome completo" [autofocus]="true" [(ngModel)]="form.name" error-text="Nome inválido!" required minlength="3"></ion-input>
+    </p>
+
+    <p>
+      <ion-input label="Email:" type="email" name="email" label-placement="floating" fill="outline" placeholder="Seu e-mail" [(ngModel)]="form.email" error-text="E-mail inválido!" required email></ion-input>
+    </p>
+
+    <p>
+      <ion-input label="Assunto:" type="text" name="subject" label-placement="floating" fill="outline" placeholder="Assunto do contato" [(ngModel)]="form.subject" error-text="Assunto inválida!" required minlength="3"></ion-input>
+    </p>
+
+    <p>
+      <ion-textarea label="Mensagem:" name="message" labelPlacement="floating" fill="outline" [autoGrow]="true" placeholder="Mensagem do contato" [(ngModel)]="form.message" error-text="Mensagem inválida!" required minlength="5"></ion-textarea>
+    </p>
+
+    <p>
+      <ion-button type="submit" (click)="processForm()">Enviar</ion-button>
+    </p>
+
+  </div>
+
+  <div *ngIf="form.sended">
+    <h4>Olá {{ form.name }}!</h4>
+    <p>Seu contato foi enviado com sucesso.</p>
+    <p><em>Obrigado...</em></p>
+  </div>
+
 </ion-content>
