@@ -28,6 +28,14 @@ const routes: Routes = [
     loadChildren: () => import('./pages/privacy/privacy.module').then( m => m.PrivacyPageModule)
   },
   {
+    path: 'login',
+    loadChildren: () => import('./user/login/login.module').then( m => m.LoginPageModule)
+  },
+  {
+    path: 'profile',
+    loadChildren: () => import('./user/profile/profile.module').then( m => m.ProfilePageModule)
+  },
+  {
     path: '**',
     loadChildren: () => import('./pages/e404/e404.module').then( m => m.E404PageModule)
   }
