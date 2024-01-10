@@ -1,5 +1,4 @@
-import { Component, OnInit } from '@angular/core';
-
+import { Component, OnInit, inject } from '@angular/core';
 import { Camera, CameraResultType } from '@capacitor/camera';
 
 @Component({
@@ -9,12 +8,36 @@ import { Camera, CameraResultType } from '@capacitor/camera';
 })
 export class CamPage implements OnInit {
 
+  public photoURL: any;
+  public photoFormat = '';
+  public saved = false;
+  public savedURL = '';
+
   constuctor() { }
 
-  ngOnInit() {
-    Camera.getPhoto({ quality: 90, allowEditing: true, resultType: CameraResultType.Uri })
-      .then((x) => { console.log('Foto escolhida: ', x); })
-      .catch((e) => { console.error(e); })
+  ngOnInit() { }
+
+  // Obtém uma foto da API da câmera.
+  getPhoto() {
+    this.saved = false;
+    this.savedURL = '';
+    Camera.getPhoto({
+      quality: 90,
+      allowEditing: true,
+      // Retorna o arquivo da câmera no formato 'BASE64' (jpg).
+      resultType: CameraResultType.DataUrl
+    }).then((x) => {
+      console.log('Foto escolhida: ', x);
+      this.photoURL = x.dataUrl;
+      this.photoFormat = x.format;
+    })
   }
+
+  // Prepara para nova foto.
+  refresh(): void {
+    this.photoURL = undefined;
+    this.saved = false;
+  }
+
 
 }
