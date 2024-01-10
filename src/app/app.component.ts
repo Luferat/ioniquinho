@@ -33,6 +33,9 @@ export class AppComponent {
   // Menu principal
   public appPages = [
     { title: 'Início', url: '/home', icon: 'home' },
+    { title: 'Câmera', url: '/cam', icon: 'camera' },
+    { title: 'GPS', url: '/geo', icon: 'map' },
+    { title: 'Dispositivo', url: '/dev', icon: 'phone-portrait' },
     { title: 'Faça Contato', url: '/contacts', icon: 'chatbubbles' },
     { title: 'Sobre', url: '/about', icon: 'information-circle' },
     { title: 'Sua Privacidade', url: '/privacy', icon: 'lock-closed' },
