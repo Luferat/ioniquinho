@@ -23,7 +23,6 @@ export class GeoPage implements OnInit {
     // Obtém dados do GPS do dispositivo.
     Geolocation.getCurrentPosition()
       .then((x) => {
-        console.log(x);
         this.coords = {
           latitude: x.coords.latitude,
           longitude: x.coords.longitude,
@@ -35,7 +34,6 @@ export class GeoPage implements OnInit {
 
   }
 
-  ngOnInit() {
-  }
+  ngOnInit() { }
 
 }

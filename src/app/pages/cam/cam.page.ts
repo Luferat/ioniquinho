@@ -24,7 +24,7 @@ export class CamPage implements OnInit {
     Camera.getPhoto({
       quality: 90,
       allowEditing: true,
-      // Retorna o arquivo da câmera no formato 'BASE64' (jpg).
+      // Retorna o arquivo da câmera no formato 'BASE64/jpg'.
       resultType: CameraResultType.DataUrl
     }).then((x) => {
       console.log('Foto escolhida: ', x);
