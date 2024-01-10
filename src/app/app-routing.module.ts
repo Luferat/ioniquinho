@@ -43,6 +43,10 @@ const routes: Routes = [
     path: 'cam',
     loadChildren: () => import('./pages/cam/cam.module').then( m => m.CamPageModule)
   },
+  {
+    path: 'dev',
+    loadChildren: () => import('./pages/dev/dev.module').then( m => m.DevPageModule)
+  },
 
   // Essa deve ser sempre a última rota → "**"
   {

@@ -33,11 +33,4 @@ export class CamPage implements OnInit {
     })
   }
 
-  // Prepara para nova foto.
-  refresh(): void {
-    this.photoURL = undefined;
-    this.saved = false;
-  }
-
-
 }

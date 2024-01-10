@@ -3,14 +3,19 @@
     <ion-buttons slot="start">
       <ion-menu-button></ion-menu-button>
     </ion-buttons>
-    <ion-title class="ion-text-center">Erro 404</ion-title>
+    <ion-title class="ion-text-center">Dispositivo</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true" class="ion-padding-start ion-padding-end">
 
-  <h2>Oooops!</h2>
-  <p>O conteúdo que você está tentando acessar não pode ser encontrado.</p>
-  <p>Use o menu para navegar pelo aplicativo.</p>
+  <p>Id do dispositivo:</p>
+  <pre>{{dev.id | json }}</pre>
+
+  <p>Dados do dispositivo:</p>
+  <pre>{{ dev.info | json }}</pre>
+
+  <p>Status da bateria:</p>
+  <pre>{{ dev.bat | json }}</pre>
 
 </ion-content>
