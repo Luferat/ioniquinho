@@ -1,0 +1,31 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title class="ion-text-center">Geolocalização</ion-title>
+    <ion-icon name="map" slot="end" size="large" class="ion-margin"></ion-icon>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+
+  <div *ngIf="coords">
+
+    <ion-list>
+
+      <ion-item>Latitude: {{ coords.latitude }}</ion-item>
+      <ion-item>Longitude: {{ coords.longitude }}</ion-item>
+      <ion-item>Velocidade: {{ coords.speed }}</ion-item>
+      <div class="ion-text-center">
+        <ion-button size="default" [href]="coords.mapURL" target="_blank">
+          <ion-icon name="map" slot="start"></ion-icon>
+          Ver no Google Maps
+        </ion-button>
+      </div>
+
+    </ion-list>
+
+  </div>
+
+</ion-content>

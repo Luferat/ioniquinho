@@ -36,6 +36,16 @@ const routes: Routes = [
     loadChildren: () => import('./user/profile/profile.module').then( m => m.ProfilePageModule)
   },
   {
+    path: 'geo',
+    loadChildren: () => import('./pages/geo/geo.module').then( m => m.GeoPageModule)
+  },
+  {
+    path: 'cam',
+    loadChildren: () => import('./pages/cam/cam.module').then( m => m.CamPageModule)
+  },
+
+  // Essa deve ser sempre a última rota → "**"
+  {
     path: '**',
     loadChildren: () => import('./pages/e404/e404.module').then( m => m.E404PageModule)
   }
