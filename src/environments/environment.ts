@@ -6,7 +6,7 @@ export const environment = {
   appSlogan: "O melhor App da Web!!",
 
   // Tipo de login. ['redirect' ou 'popup'].
-  signInMethod: "redirect",
+  signInMethod: "popup",
 
   // URL base da API REST.
   apiURL: "https://ionteste-2023-default-rtdb.firebaseio.com/",
